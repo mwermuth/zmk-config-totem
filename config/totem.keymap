@@ -9,7 +9,6 @@
 //                                                                      ▀  ▀  ▀
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-       
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -26,43 +25,12 @@
 &mt {
     quick-tap-ms = <100>;
     global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_tvp {
-            timeout-ms = <100>;
-            key-positions = <11 12 13>;
-            bindings = <&tog TVP1>;
-        };
-    };
-
-    macros {
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -86,10 +54,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q       &kp W       &kp E           &kp R        &kp T        &kp Y    &kp U        &kp I        &kp O       &kp P
-       &mt LGUI A  &mt LALT S  &mt LCTRL D     &mt LSHFT F  &kp G        &kp H    &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
-&kp A  &kp Z       &kp X       &kp C           &kp V        &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp FSLH            &kp SQT
-                               &kp LEFT_SHIFT  &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM ESC  &kp BSPC
+         &kp Q  &kp W  &kp E           &kp R        &kp T        &kp Y    &kp U        &kp I      &kp O    &kp P
+         &kp A  &kp S  &kp D           &kp F        &kp G        &kp H    &kp J        &kp K      &kp L    &kp SEMI
+&kp ESC  &kp Z  &kp X  &kp C           &kp V        &kp B        &kp N    &kp M        &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                       &kp LEFT_SHIFT  &lt NAV TAB  &kp SPACE    &kp RET  &lt SYM ESC  &kp BSPC
             >;
         };
 
