@@ -29,7 +29,8 @@
     tapping-term-ms = <170>;
 };
 
-behaviors {
+/ {
+    behaviors {
     hml: home_row_mod_left {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
@@ -55,9 +56,8 @@ behaviors {
         hold-trigger-key-positions = < 10 11 12 13 >; // List of keys on the left side of the keyboard
         hold-trigger-on-release;
     };
-};
+    };
 
-/ {
     combos { compatible = "zmk,combos"; };
 
     macros {
